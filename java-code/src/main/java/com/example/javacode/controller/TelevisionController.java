@@ -3,6 +3,7 @@ package com.example.javacode.controller;
 import com.example.javacode.models.Television;
 import com.example.javacode.service.TelevisionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -26,6 +27,11 @@ public class TelevisionController {
     @GetMapping("/purchaseTelevision/{name}")
     public Television purchaseTelevision(@PathVariable String nameParam) {
         return televisionService.purchaseTelevision(nameParam);
+    }
+
+    @DeleteMapping("/{televisionId}")
+    public HttpStatus deleteTelevision(@PathVariable Long televisionId) {
+        return televisionService.deleteTelevision(televisionId);
     }
 
 }
