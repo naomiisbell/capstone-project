@@ -17,9 +17,6 @@ public class Television {
     @Column
     public String price;
 
-    @Column
-    public String image;
-
     public Television() {}
 
     public Long getId() {
@@ -46,11 +43,4 @@ public class Television {
         this.price = price;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
 }
