@@ -3,6 +3,7 @@ package com.example.javacode.service;
 import com.example.javacode.models.Phone;
 import com.example.javacode.repositories.PhoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,5 +24,11 @@ public class PhoneServiceImpl implements PhoneService {
     @Override
     public Phone createPhone(Phone phone) {
         return phoneRepository.save(phone);
+    }
+
+    @Override
+    public HttpStatus deletePhone(Long phoneId) {
+        phoneRepository.deleteById(phoneId);
+        return HttpStatus.OK;
     }
 }
