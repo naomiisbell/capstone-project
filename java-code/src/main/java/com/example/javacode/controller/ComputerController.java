@@ -3,6 +3,7 @@ package com.example.javacode.controller;
 import com.example.javacode.models.Computer;
 import com.example.javacode.service.ComputerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -26,5 +27,10 @@ public class ComputerController {
     @GetMapping("/purchaseComputer/{name}")
     public Computer purchaseComputer(@PathVariable String nameParam) {
         return computerService.purchaseComputer(nameParam);
+    }
+
+    @DeleteMapping("/{computerId}")
+    public HttpStatus deleteComputer(@PathVariable Long computerId) {
+        return computerService.deleteComputer(computerId);
     }
 }
