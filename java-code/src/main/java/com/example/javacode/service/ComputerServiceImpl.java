@@ -3,6 +3,7 @@ package com.example.javacode.service;
 import com.example.javacode.models.Computer;
 import com.example.javacode.repositories.ComputerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,5 +24,11 @@ public class ComputerServiceImpl implements ComputerService {
     @Override
     public Computer createComputer(Computer computer) {
         return computerRepository.save(computer);
+    }
+
+    @Override
+    public HttpStatus deleteComputer(Long computerId) {
+        computerRepository.deleteById(computerId);
+        return HttpStatus.OK;
     }
 }
