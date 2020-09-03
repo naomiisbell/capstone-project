@@ -1,33 +1,50 @@
-import React, { useState }from 'react';
+import React, { useEffect, useState }from 'react';
 import axios from 'axios';
+import DeletePhone from './DeletePhone';
 
 function Phones() {
-    const [nameOfPhone] = useState("");
-    const [priceOfPhone] = useState("");
+    const [nameOfPhone, setNameOfPhone] = useState("");
+    const [priceOfPhone, setPriceOfPhone] = useState("");
     const [phoneObject, setPhoneObject] = useState({name: "", price: ""});
     const [phones, setPhones] = useState(null);
 
-    // async function grabAllPhones() {
-    //     try {
-    //         const res = await axios.get('http://localhost:8080/phone');
-    //         setPhones(res.data);
-    //     } catch(e) {
-    //         console.error(e, e.message);
-    //     }
-    // }
+    async function grabAllPhones() {
+        try {
+            const res = await axios.get('http://localhost:8080/phone');
+            setPhones(res.data);
+        } catch(e) {
+            console.error(e, e.message);
+        }
+    }
 
-    // useEffect(() => {
-    //     grabAllPhones();
-    // }, [])
+    useEffect(() => {
+        grabAllPhones();
+        firstPhone();
+    }, [])
 
     function handleChange(e) {
         const{ value, id } = e.target;
         setPhoneObject({...phoneObject, [id]: value })
     }
 
+    // console.log(nameOfPhone);
+    // console.log(priceOfPhone);
+    async function firstPhone() {
+        // e.preventDefault();
+        setNameOfPhone("iPhone 11 128GB Red");
+        setPriceOfPhone("$749.00");
+        console.log(nameOfPhone);
+        console.log(priceOfPhone);
+    }
+
+    // useEffect(() => {
+    //     firstPhone();
+    // }, [])
+
     async function postPhone(e) {
         e.preventDefault();
         try {
+            // nameOfPhone ? firstPhone() : 'Loading...';
             phoneObject.name = nameOfPhone
             phoneObject.price = priceOfPhone
 
@@ -41,11 +58,6 @@ function Phones() {
         }
     }
 
-    function firstPhone(nameOfPhone, nameOfPrice) {
-        nameOfPhone = "iPhone 11 128GB Red"
-        nameOfPrice = "$749.00"
-    }
-
 
         return (
             <div>
@@ -57,12 +69,12 @@ function Phones() {
                         <h3>$749.00</h3>
                         <button 
                         onClick= { (e) => {
+                            firstPhone(e);
                             postPhone(e);
-                            firstPhone();
                         }} >Add to Cart</button>
                     </form>
                     {
-                        phones ? phones.map(phone => <Phones phoneId={ phone.id } phoneName={ phone.name }  phoneImage={ phone.image } phonePrice={ phone.price } />) : 'Loading...' 
+                        phones ? phones.map(phone => <DeletePhone phoneId={ phone.id } phoneName={ phone.name } phonePrice={ phone.price } getPhones = { grabAllPhones } />) : 'Loading...' 
                     }
                 </div>
             </div>
