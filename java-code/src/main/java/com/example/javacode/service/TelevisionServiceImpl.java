@@ -3,6 +3,7 @@ package com.example.javacode.service;
 import com.example.javacode.models.Television;
 import com.example.javacode.repositories.TelevisionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,6 +24,12 @@ public class TelevisionServiceImpl implements TelevisionService {
     @Override
     public Television createTelevision(Television television) {
         return televisionRepository.save(television);
+    }
+
+    @Override
+    public HttpStatus deleteTelevision(Long televisionId) {
+        televisionRepository.deleteById(televisionId);
+        return HttpStatus.OK;
     }
 
 }
