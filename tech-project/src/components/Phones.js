@@ -1,6 +1,6 @@
 import React, { useEffect, useState }from 'react';
 import axios from 'axios';
-import DeletePhone from './DeletePhone';
+import DeleteItem from './DeleteItem';
 
 function Phones() {
     const [nameOfPhone, setNameOfPhone] = useState("");
@@ -74,7 +74,7 @@ function Phones() {
                         }} >Add to Cart</button>
                     </form>
                     {
-                        phones ? phones.map(phone => <DeletePhone phoneId={ phone.id } phoneName={ phone.name } phonePrice={ phone.price } getPhones = { grabAllPhones } />) : 'Loading...' 
+                        phones ? phones.map(phone => <DeleteItem phoneId={ phone.id } phoneName={ phone.name } phonePrice={ phone.price } getPhones = { grabAllPhones } />) : 'Loading...' 
                     }
                 </div>
             </div>
