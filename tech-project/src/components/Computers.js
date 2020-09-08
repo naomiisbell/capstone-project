@@ -27,14 +27,15 @@ function Computers() {
   }
 
   async function fourthComp() {
-    setNameOfComp("MacBook Air Space Gray 13 inch 8GB Memory - 256GB SSD Storage");
-    setPriceOfComp(999.00);
+    setNameOfComp("Surface Laptop 3 Sandstone 13.5 inch 8GB Memory - 256GB SSD Storage");
+    setPriceOfComp(1299.99);
   }
 
   useEffect(() => {
     firstComp();
     secondComp();
     thirdComp();
+    fourthComp();
   }, []);
 
   async function postComp(e) {
@@ -112,6 +113,27 @@ function Computers() {
           <button
             onClick={(e) => {
               thirdComp(e);
+              postComp(e);
+            }}
+          >
+            Add to Cart
+          </button>
+        </form>
+      </div>
+
+      <div className="compFour">
+        <form onChange={(e) => handleChange(e)}>
+          <img
+            alt=""
+            width="375px"
+            src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE3oYj5?ver=0b43&q=90&m=6&h=270&w=270&b=%23FFFFFFFF&o=f&aim=true"
+          />
+          <h2>Surface Laptop 3 Sandstone 13.5 inch</h2>
+          <h2>8GB Memory - 256GB SSD Storage</h2>
+          <h3>$1299.99</h3>
+          <button
+            onClick={(e) => {
+              fourthComp(e);
               postComp(e);
             }}
           >
