@@ -3,30 +3,36 @@ import axios from "axios";
 import DeleteItem from "./DeleteItem";
 
 function Cart() {
-  const [phones, setPhones] = useState(null);
+  const [items, setItems] = useState(null);
 
-  async function grabAllPhones() {
+  async function grabAllItems() {
     try {
-      const res = await axios.get("http://localhost:8080/phone");
-      setPhones(res.data);
+      const res = await axios.get("https://frozen-peak-86991.herokuapp.com/cart");
+      setItems(res.data);
+
+      // const res2 = await axios.get("https://frozen-peak-86991.herokuapp.com/television");
+      // setItems(res2.data);
+
+      // const res3 = await axios.get("https://frozen-peak-86991.herokuapp.com/computer");
+      // setItems(res3.data);
     } catch (e) {
       console.error(e, e.message);
     }
   }
 
   useEffect(() => {
-    grabAllPhones();
+    grabAllItems();
   }, []);
 
   return (
     <div>
-      {phones
-        ? phones.map((phone) => (
+      {items
+        ? items.map((item) => (
             <DeleteItem
-              phoneId={phone.id}
-              phoneName={phone.name}
-              phonePrice={phone.price}
-              getPhones={grabAllPhones}
+              itemId={item.id}
+              itemName={item.name}
+              itemPrice={item.price}
+              getItems={grabAllItems}
             />
           ))
         : "Loading..."}

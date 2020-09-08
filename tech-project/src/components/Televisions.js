@@ -27,12 +27,12 @@ function Televisions() {
       tvObject.price = priceOfTv;
 
       const res = await axios.post(
-        "http://localhost:8080/television",
+        "https://frozen-peak-86991.herokuapp.com/television",
         tvObject
       );
       console.log(res.data);
 
-      const res2 = await axios.post("http://localhost:8080/cart", tvObject);
+      const res2 = await axios.post("https://frozen-peak-86991.herokuapp.com/cart", tvObject);
       console.log(res2.data);
     } catch (e) {
       console.error(e, e.message);

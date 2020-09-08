@@ -13,36 +13,45 @@ function Phones() {
   }
 
   async function firstPhone() {
-    // e.preventDefault();
     setNameOfPhone("iPhone 11 128GB Red");
     setPriceOfPhone(749.00);
-    // console.log(nameOfPhone);
-    // console.log(priceOfPhone);
+    // console.error(nameOfPhone);
+    // console.error(priceOfPhone);
   }
 
   async function secondPhone() {
       setNameOfPhone("iPhone 11 128GB Purple");
       setPriceOfPhone(749.00);
+      // console.error(nameOfPhone);
+      // console.error(priceOfPhone);
   }
 
   async function thirdPhone() {
       setNameOfPhone("iPhone 11 128GB Green");
       setPriceOfPhone(749.00);
+      // console.log(nameOfPhone);
+      // console.log(priceOfPhone);
   }
 
   async function fourthPhone() {
       setNameOfPhone("iPhone 11 Pro Max 256GB Gold");
       setPriceOfPhone(1249);
+      // console.log(nameOfPhone);
+      // console.log(priceOfPhone);
   }
 
   async function fifthPhone() {
       setNameOfPhone("iPhone 11 Pro Max 256GB Midnight Green");
       setPriceOfPhone(1249);
+      // console.log(nameOfPhone);
+      // console.log(priceOfPhone);
   }
 
   async function sixthPhone() {
       setNameOfPhone("iPhone 11 Pro Max 256GB Silver");
       setPriceOfPhone(1249);
+      // console.log(nameOfPhone);
+      // console.log(priceOfPhone);
   }
 
   useEffect(() => {
@@ -57,17 +66,18 @@ function Phones() {
   async function postPhone(e) {
     e.preventDefault();
     try {
+      
       phoneObject.name = nameOfPhone;
       phoneObject.price = priceOfPhone;
 
-      const res = await axios.post("http://localhost:8080/phone", phoneObject);
+      const res = await axios.post("https://frozen-peak-86991.herokuapp.com/phone", phoneObject);
       console.log(res.data);
 
-      const res2 = await axios.post("http://localhost:8080/cart", phoneObject);
+      const res2 = await axios.post("https://frozen-peak-86991.herokuapp.com/cart", phoneObject);
       console.log(res2.data);
 
-      // const secondRes = await axios.get('http://localhost:8080/phone');
-      // setPhones(secondRes.data);
+      // const secondRes = await axios.get('https://frozen-peak-86991.herokuapp.com/cart');
+      // setPhoneObject(secondRes.data);
     } catch (e) {
       console.error(e, e.message);
     }

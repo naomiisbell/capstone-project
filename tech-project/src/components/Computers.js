@@ -45,12 +45,12 @@ function Computers() {
       compObject.price = priceOfComp;
 
       const res = await axios.post(
-        "http://localhost:8080/computer",
+        "https://frozen-peak-86991.herokuapp.com/computer",
         compObject
       );
       console.log(res.data);
 
-      const res2 = await axios.post("http://localhost:8080/cart", compObject);
+      const res2 = await axios.post("https://frozen-peak-86991.herokuapp.com/cart", compObject);
       console.log(res2.data);
     } catch (e) {
       console.error(e, e.message);
