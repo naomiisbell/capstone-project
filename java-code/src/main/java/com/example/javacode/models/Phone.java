@@ -15,7 +15,7 @@ public class Phone {
     public String name;
 
     @Column
-    public String price;
+    public Double price;
 
     public Phone() {}
 
@@ -35,11 +35,11 @@ public class Phone {
         this.name = name;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
