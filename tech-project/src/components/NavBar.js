@@ -15,41 +15,51 @@ function NavBar() {
         <nav>
           <ul>
             <li>
-              <Link style={{ textDecoration: 'none' }} to="/home">Home</Link>
+              <Link style={{ textDecoration: "none" }} to="/home">
+                Home
+              </Link>
             </li>
             <li>
-              <Link style={{ textDecoration: 'none' }} to="/phones">Phones</Link>
+              <Link style={{ textDecoration: "none" }} to="/phones">
+                Phones
+              </Link>
             </li>
             <li>
-              <Link style={{ textDecoration: 'none' }} to="/televisions">Televisions</Link>
+              <Link style={{ textDecoration: "none" }} to="/televisions">
+                Televisions
+              </Link>
             </li>
             <li>
-              <Link style={{ textDecoration: 'none' }} to="/computers">Computers</Link>
+              <Link style={{ textDecoration: "none" }} to="/computers">
+                Computers
+              </Link>
             </li>
             <li>
-              <Link style={{ textDecoration: 'none' }} to="/cart">Cart</Link>
+              <Link style={{ textDecoration: "none" }} to="/cart">
+                Cart
+              </Link>
             </li>
           </ul>
         </nav>
-        </div>
+      </div>
 
-        <Switch>
-          <Route path="/home">
-              <Home />
-          </Route>
-          <Route path="/phones">
-            <Phones />
-          </Route>
-          <Route path="/televisions">
-            <Televisions />
-          </Route>
-          <Route path="/computers">
-            <Computers />
-          </Route>
-          <Route path="/cart">
-            <Cart />
-          </Route>
-        </Switch>
+      <Switch>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/phones">
+          <Phones />
+        </Route>
+        <Route path="/televisions">
+          <Televisions />
+        </Route>
+        <Route path="/computers">
+          <Computers />
+        </Route>
+        <Route path="/cart">
+          <Cart />
+        </Route>
+      </Switch>
     </Router>
   );
 }

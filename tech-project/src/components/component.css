@@ -94,3 +94,12 @@ h3 {
     align-items: center;
     text-align: center;
 }
+
+.totalBtn button {
+    font-size: 25px;
+}
+
+.totalStyle {
+    padding: 15px;
+    font-size: 70px;
+}

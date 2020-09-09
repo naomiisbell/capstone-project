@@ -57,9 +57,9 @@ function Cart() {
           : "Empty"}
       </div>
       <div className="totalBtn">
-        <Button onClick={(e) => getTotal(e)}>Total</Button>
+        <Button fontSize="100px" onClick={(e) => getTotal(e)}>Total</Button>
       </div>
-      <h2>${total}</h2>
+      <h2 className="totalStyle">${total}</h2>
     </div>
   );
 }
