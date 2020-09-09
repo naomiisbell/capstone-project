@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 
 function Cart() {
   const [items, setItems] = useState(null);
+  const [total, setTotal] = useState(null);
 
   async function grabAllItems() {
     try {
@@ -27,9 +28,11 @@ function Cart() {
   async function getTotal(e) {
     e.preventDefault();
     try {
-      const res = await axios.get("https://frozen-peak-86991.herokuapp.com/cart/cartTotal");
-      console.log(res.data);
-
+      const res = await axios.get(
+        "https://frozen-peak-86991.herokuapp.com/cart/cartTotal"
+      );
+      console.error(res.data);
+      setTotal(res.data);
     } catch (e) {
       console.error(e, e.message);
     }
@@ -56,6 +59,7 @@ function Cart() {
       <div className="totalBtn">
         <Button onClick={(e) => getTotal(e)}>Total</Button>
       </div>
+      <h2>${total}</h2>
     </div>
   );
 }
