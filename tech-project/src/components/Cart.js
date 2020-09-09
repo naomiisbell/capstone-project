@@ -35,7 +35,7 @@ function Cart() {
               getItems={grabAllItems}
             />
           ))
-        : "Loading..."}
+        : "Empty"}
     </div>
   );
 }

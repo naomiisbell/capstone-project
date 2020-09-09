@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Button from '@material-ui/core/Button';
+import './component.css';
 
 function Phones() {
   const [nameOfPhone, setNameOfPhone] = useState("");
@@ -84,7 +86,8 @@ function Phones() {
   }
 
   return (
-    <div className="phone">
+    <div>
+    <div className="phoneSecOne">
       <div className="phoneOne">
         <form onChange={(e) => handleChange(e)}>
           <img
@@ -95,14 +98,16 @@ function Phones() {
           <h2>iPhone 11</h2>
           <h2>128GB Red</h2>
           <h3>$749.00</h3>
-          <button
+          <div className="btnOne">
+          <Button
             onClick={(e) => {
               firstPhone(e);
               postPhone(e);
             }}
           >
             Add to Cart
-          </button>
+          </Button>
+          </div>
         </form>
       </div>
 
@@ -116,14 +121,16 @@ function Phones() {
           <h2>iPhone 11</h2>
           <h2>128GB Purple</h2>
           <h3>$749.00</h3>
-          <button
+          <div className="btnTwo">
+          <Button
             onClick={(e) => {
               secondPhone(e);
               postPhone(e);
             }}
           >
             Add to Cart
-          </button>
+          </Button>
+          </div>
         </form>
       </div>
 
@@ -137,16 +144,21 @@ function Phones() {
           <h2>iPhone 11</h2>
           <h2>128GB Green</h2>
           <h3>$749.00</h3>
-          <button
+          <div className="btnThree">
+          <Button
             onClick={(e) => {
               thirdPhone(e);
               postPhone(e);
             }}
           >
             Add to Cart
-          </button>
+          </Button>
+          </div>
         </form>
       </div>
+      </div>
+
+      <div className="phoneSecTwo">
 
       <div className="phoneFour">
         <form onChange={(e) => handleChange(e)}>
@@ -158,14 +170,16 @@ function Phones() {
           <h2>iPhone 11 Pro Max</h2>
           <h2>256GB Gold</h2>
           <h3>$1249</h3>
-          <button
+          <div className="btnFour">
+          <Button
             onClick={(e) => {
               fourthPhone(e);
               postPhone(e);
             }}
           >
             Add to Cart
-          </button>
+          </Button>
+          </div>
         </form>
       </div>
 
@@ -179,14 +193,16 @@ function Phones() {
           <h2>iPhone 11 Pro Max</h2>
           <h2>256GB Midnight Green</h2>
           <h3>$1249</h3>
-          <button
+          <div className="btnFive">
+          <Button
             onClick={(e) => {
               fifthPhone(e);
               postPhone(e);
             }}
           >
             Add to Cart
-          </button>
+          </Button>
+          </div>
         </form>
       </div>
 
@@ -200,17 +216,20 @@ function Phones() {
           <h2>iPhone 11 Pro Max</h2>
           <h2>256GB Silver</h2>
           <h3>$1249</h3>
-          <button
+          <div className="btnSix">
+          <Button
             onClick={(e) => {
               sixthPhone(e);
               postPhone(e);
             }}
           >
             Add to Cart
-          </button>
+          </Button>
+          </div>
         </form>
       </div>
-    </div>
+      </div>
+      </div>
   );
 }
 

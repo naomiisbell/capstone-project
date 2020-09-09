@@ -1,0 +1,85 @@
+.phoneSecOne {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phoneSecTwo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compSecOne {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.compSecTwo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin: 15px;
+}
+
+.tvSecOne {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin: 50px;
+}
+
+.tvSecTwo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin: 50px;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.btnOne {
+    text-align: center;
+}
+
+.btnTwo {
+    text-align: center;
+}
+
+.btnThree {
+    text-align: center;
+}
+
+.btnFour {
+    text-align: center;
+}
+
+.btnFive {
+    text-align: center;
+}
+
+.btnSix {
+    text-align: center;
+}
+
+.home__cover {
+    object-fit: contain;
+    background-image: url("https://www.homecareinsight.co.uk/wp-content/uploads/2020/07/connected-technology.jpg");
+    position: fixed;
+    text-align: center;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
+}

@@ -15,19 +15,19 @@ function NavBar() {
         <nav>
           <ul>
             <li>
-              <Link to="/home">Home</Link>
+              <Link style={{ textDecoration: 'none' }} to="/home">Home</Link>
             </li>
             <li>
-              <Link to="/phones">Phones</Link>
+              <Link style={{ textDecoration: 'none' }} to="/phones">Phones</Link>
             </li>
             <li>
-              <Link to="/televisions">Televisions</Link>
+              <Link style={{ textDecoration: 'none' }} to="/televisions">Televisions</Link>
             </li>
             <li>
-              <Link to="/computers">Computers</Link>
+              <Link style={{ textDecoration: 'none' }} to="/computers">Computers</Link>
             </li>
             <li>
-              <Link to="/cart">Cart</Link>
+              <Link style={{ textDecoration: 'none' }} to="/cart">Cart</Link>
             </li>
           </ul>
         </nav>

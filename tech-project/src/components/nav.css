@@ -15,6 +15,7 @@
     object-fit: contain;
     border-bottom: 1px solid;
     font-size: 20px;
+    background-color: lavender;
 }
 
 ul {
