@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import Button from '@material-ui/core/Button';
+
 
 function DeleteItem({ itemName, itemPrice, getItems, itemId }) {
   async function delItem(id) {
@@ -24,12 +26,13 @@ function DeleteItem({ itemName, itemPrice, getItems, itemId }) {
 
   return (
     <div>
+      {/* i used JSON.stringify() to convert my objects to a string when displayed on the page */}
       <p>
         {JSON.stringify(itemName)} : {itemPrice}
       </p>
-      <button id={itemId} onClick={(e) => delItem(e.target.id)}>
+      <Button id={itemId} onClick={(e) => delItem(e.target.id)}>
         Remove Item
-      </button>
+      </Button>
     </div>
   );
 }

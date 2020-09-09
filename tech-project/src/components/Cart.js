@@ -5,9 +5,11 @@ import "./component.css";
 import Button from "@material-ui/core/Button";
 
 function Cart() {
+  // setting my useState variables 
   const [items, setItems] = useState(null);
   const [total, setTotal] = useState(null);
 
+  // function that grabs all the items from my cart db
   async function grabAllItems() {
     try {
       const res = await axios.get(
@@ -25,6 +27,7 @@ function Cart() {
     }
   }
 
+  // getTotal function grabs the getTotal method from my backend to calculate my total
   async function getTotal(e) {
     e.preventDefault();
     try {
@@ -44,6 +47,7 @@ function Cart() {
 
   return (
     <div>
+      {/* mapping through the items that are posted in the cart db then i'm calling on the grabAllItems func */}
       <div className="items">
         {items
           ? items.map((item) => (

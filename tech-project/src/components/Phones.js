@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import './component.css';
 
 function Phones() {
+  // setting my useState variables
   const [nameOfPhone, setNameOfPhone] = useState("");
   const [priceOfPhone, setPriceOfPhone] = useState("");
   const [phoneObject, setPhoneObject] = useState({ name: "", price: "" });
@@ -14,6 +15,7 @@ function Phones() {
     setPhoneObject({ ...phoneObject, [id]: value });
   }
 
+  // all of my products are hardcoded
   async function firstPhone() {
     setNameOfPhone("iPhone 11 128GB Red");
     setPriceOfPhone(749.00);
@@ -65,6 +67,7 @@ function Phones() {
     sixthPhone();
   }, []);
 
+  // i'm posting the products in both their table and the cart table
   async function postPhone(e) {
     e.preventDefault();
     try {
