@@ -83,3 +83,14 @@ h3 {
     background-size: cover;
     background-position: center;
 }
+
+.items {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px;
+}
+
+.totalBtn {
+    align-items: center;
+    text-align: center;
+}
